@@ -1,0 +1,5 @@
+export const money = (n) => Number(n).toLocaleString('en-US', { style: 'currency', currency: 'USD' })
+const loc = (lang) => (lang === 'so' ? 'so-SO' : 'en-US')
+export const fmtDate = (d, lang) => new Date(String(d).length === 10 ? d + 'T00:00:00' : d)
+  .toLocaleDateString(loc(lang), { year: 'numeric', month: 'short', day: 'numeric' })
+export const fmtDateTime = (d, lang) => new Date(d).toLocaleString(loc(lang), { dateStyle: 'medium', timeStyle: 'short' })
